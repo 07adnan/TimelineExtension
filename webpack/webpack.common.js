@@ -4,7 +4,8 @@ module.exports = {
     entry: {
         background: path.join(__dirname, '../src/scripts/background.ts'),
         menu: path.join(__dirname, '../src/scripts/menu.ts'),
-        timeline: path.join(__dirname, '../src/scripts/timeline.ts')
+        timeline: path.join(__dirname, '../src/scripts/timeline.ts'),
+        'fallback-auth': path.join(__dirname, '../src/scripts/fallback-auth.ts')
     },
     output: {
         path: path.join(__dirname, '../extension/scripts'),
@@ -16,7 +17,7 @@ module.exports = {
     module: {
         rules: [
           // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-          { test: /\.tsx?$/, loader: "ts-loader" }
+          { test: /\.tsx?$/, loader: 'ts-loader' }
         ]
     }
 };

@@ -10,6 +10,8 @@ Windows Timeline Support is a web extension that integrates Windows Timeline sup
 
 A list of known issues and planned features is located below. Before opening a new issue, check that it's not mentioned below and does not already exist.
 
+See frequently asked questions [here](FAQ.md).
+
 ## Browser Support
 
 |Browser|Supported|Download|Note|
@@ -18,11 +20,25 @@ A list of known issues and planned features is located below. Before opening a n
 |Firefox|Yes|[Firefox Addons](https://addons.mozilla.org/en-GB/firefox/addon/windows-timeline-support/)|Fully Supported|
 |Microsoft Edge|No|n/a|Microsoft Edge already has Windows Timeline integration. Might release a version that only contains Project Rome support.|
 |Vivaldi| Yes |[Chrome Web Store](https://chrome.google.com/webstore/detail/windows-timeline-support/meokcjmjkobffcgldbjjklmaaediikdj)|Supported Icon Assets. Chrome OAuth Base.|
-|Opera|No|n/a| Use tool to install from Chrome Web Store. Missing Icon Assets.|
+|Opera|No|n/a| Use tool to install from Chrome Web Store. Supported Icon Assets.|
 
 ## Version History
 
+### 1.0.3
+
+* Fixed issue that broke login for Opera users.
+* Added new authentication system for generic browsers (Opera, Firefox Mobile) so they can login.
+
+### 1.0.2
+
+* Fixed scaling issue for Firefox Mobile.
+* Fix issue where websites would be stored in your feed while in private mode.
+* Added recent activities button.
+* Added Opera icon assets.
+* Fixed an issue where timeline activities would not appear or take a while to appear.
+
 ### 1.0.1
+
 * Initial public beta.
 
 ## Setup
@@ -50,7 +66,7 @@ A list of known issues and planned features is located below. Before opening a n
 ## Authors
 
 - **Dominic Maas** - *Initial Work and Lead* - [Twitter](https://twitter.com/dominicjmaas)
-- **Daniel Aleksandersen** - *Firefox Port, Icon and Other Misc Changes* - [GitHub](https://github.com/da2x)
+- **Daniel Aleksandersen** - *Firefox Port, Icon and Other Misc Changes* - [Homepage](https://www.daniel.priv.no/)
 
 See also the list of [contributors](https://github.com/DominicMaas/TimelineExtension/graphs/contributors) who participated in this project.
 

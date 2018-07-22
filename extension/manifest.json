@@ -4,12 +4,13 @@
     "name": "Windows Timeline Support",
     "short_name": "Timeline",
     "description": "Automatically sync your browsing history to your Windows 10 PC with Windows Timeline. Push active websites to any of your devices.",
-    "version": "1.0.1",
+    "version": "1.0.3",
     "author": "Dominic Maas",
     "homepage_url": "https://github.com/DominicMaas/TimelineExtension#readme",
 
     "background": {
-		"scripts": ["scripts/background.js"]
+        "scripts": ["scripts/background.js"],
+        "persistent": false
     },
     "browser_action": {
         "default_icon": {
@@ -19,6 +20,18 @@
             "32": "images/icon_32.png",
             "38": "images/icon_38.png"
         },
+        "theme_icons": [
+            {
+                "light": "images/icon_light_16.png",
+                "dark": "images/icon_dark_16.png",
+                "size": 16
+            },
+            {
+                "light": "images/icon_light_32.png",
+                "dark": "images/icon_dark_32.png",
+                "size": 32
+            }
+        ],
         "default_title": "Windows Timeline Support",
         "default_popup": "menu.html"
     },
@@ -37,6 +50,10 @@
         "matches": ["http://*/*", "https://*/*"],
         "js": ["scripts/timeline.js"],
         "run_at": "document_end"
+    }, {
+        "matches": ["https://timeline.dominicmaas.co.nz/auth-callback/*"],
+        "js": ["scripts/fallback-auth.js"],
+        "run_at": "document_end"
     }],
 
     "permissions": [
@@ -46,9 +63,12 @@
         "notifications",
         "https://graph.microsoft.com/v1.0/me/activities/*",
         "https://graph.microsoft.com/beta/me/devices/*",
+        "https://graph.microsoft.com/beta/me/activities/*",
         "https://ge-functions.azurewebsites.net/api/get-token",
         "https://ge-functions.azurewebsites.net/api/refresh-token"
     ],
+
+    "incognito": "not_allowed",
 
     "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0Lvq6kJ/jA7CkrEFgidLbeNBlQaxroAML5quwXDy7uqZeK8/K1GYSu6fn9hYEq+75OQi8SXRYSe69KAzbtIGO2AyCj044FcHO6a3gXQN8sKhCGCGhPuSBLMXIlOFr26xp7oyvCubS5bvlRSlaIAvdWhkU6mQOTC1ewKYFy4BpIy7WoPSh9oiu2DUoZ2SVthNjZzF8quKrukmD6v6qMVo5AUdkrSijQYy4mjNmSrkaipf/tNQzvnoD4Ac4iQ0GC8yNAhR1mHXUEQuDgUgyxxQYXikzL/61yXk5gINA7QxRbgg9n3J8CfNM9oDtRp2YMavUxXBcxoa6g6PLFrHl3yFPwIDAQAB",
     "applications": {
